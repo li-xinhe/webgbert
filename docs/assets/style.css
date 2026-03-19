@@ -378,6 +378,14 @@ textarea {
   line-height: 1.75;
 }
 
+.footer__contact-text p {
+  margin: 0;
+}
+
+.footer__contact-text p + p {
+  margin-top: 8px;
+}
+
 .footer__contact-text a {
   color: var(--accent);
   text-decoration: none;

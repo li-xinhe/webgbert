@@ -35,9 +35,8 @@ const translations = {
     top_predictions: "Top Predictions",
     macro_title: "Macro Variables from add/",
     footer_label: "Participating Institutions",
-    contact_footer_label: "Contact",
     contact_footer_html:
-      'Xinhe Li, tenured lecturer, Otaru University of Commerce, email: <a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a>, address: Room 456 (Li Lab), Building 4, 3-5-21 Midori, Otaru, Hokkaido 047-8501, Japan',
+      '<p>Xinhe Li, tenured lecturer, Otaru University of Commerce</p><p>Email: <a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>Address: Room 456 (Li Lab), Building 4, 3-5-21 Midori, Otaru, Hokkaido 047-8501, Japan</p>',
     footer_meta: "Research interface for comparative manifesto and policy analysis.",
     api_missing: "No backend endpoint is currently available.",
     api_saved: "Backend endpoint saved.",
@@ -88,9 +87,8 @@ const translations = {
     top_predictions: "上位予測カテゴリ",
     macro_title: "add/ から取得したマクロ変数",
     footer_label: "参加機関",
-    contact_footer_label: "連絡先",
     contact_footer_html:
-      '李昕翮，讲师，小樽商科大学。メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a>　アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室（李研）',
+      '<p>李昕翮，讲师，小樽商科大学。</p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室（李研）</p>',
     footer_meta: "比較マニフェスト・政策分析のための研究インターフェース。",
     api_missing: "利用可能なバックエンド接続先がありません。",
     api_saved: "バックエンド接続先を保存しました。",
