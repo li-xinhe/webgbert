@@ -118,8 +118,13 @@ input {
 .hero__inner {
   padding: 36px 38px;
   background:
+    linear-gradient(135deg, rgba(252, 251, 248, 0.82), rgba(246, 242, 234, 0.84)),
     radial-gradient(circle at top right, rgba(29, 53, 87, 0.08), transparent 28%),
-    linear-gradient(135deg, rgba(252, 251, 248, 0.98), rgba(246, 242, 234, 0.98));
+    url("../bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode: normal;
 }
 
 .hero__kicker,
