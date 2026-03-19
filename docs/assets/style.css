@@ -378,6 +378,16 @@ textarea {
   line-height: 1.75;
 }
 
+.footer__contact-text a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29, 53, 87, 0.22);
+}
+
+.footer__contact-text a:hover {
+  border-bottom-color: var(--accent);
+}
+
 .footer__sep {
   margin: 0 10px;
   color: #9c9384;

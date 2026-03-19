@@ -36,8 +36,8 @@ const translations = {
     macro_title: "Macro Variables from add/",
     footer_label: "Participating Institutions",
     contact_footer_label: "Contact",
-    contact_footer_text:
-      "Xinhe Li, tenured lecturer, Otaru University of Commerce, email: lixinhe@res.otaru-uc.ac.jp, address: Room 456 (Li Lab), Building 4, 3-5-21 Midori, Otaru, Hokkaido 047-8501, Japan",
+    contact_footer_html:
+      'Xinhe Li, tenured lecturer, Otaru University of Commerce, email: <a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a>, address: Room 456 (Li Lab), Building 4, 3-5-21 Midori, Otaru, Hokkaido 047-8501, Japan',
     footer_meta: "Research interface for comparative manifesto and policy analysis.",
     api_missing: "No backend endpoint is currently available.",
     api_saved: "Backend endpoint saved.",
@@ -89,8 +89,8 @@ const translations = {
     macro_title: "add/ から取得したマクロ変数",
     footer_label: "参加機関",
     contact_footer_label: "連絡先",
-    contact_footer_text:
-      "李昕翮，讲师，小樽商科大学。メール：lixinhe@res.otaru-uc.ac.jp　アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室（李研）",
+    contact_footer_html:
+      '李昕翮，讲师，小樽商科大学。メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a>　アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室（李研）',
     footer_meta: "比較マニフェスト・政策分析のための研究インターフェース。",
     api_missing: "利用可能なバックエンド接続先がありません。",
     api_saved: "バックエンド接続先を保存しました。",
@@ -146,6 +146,10 @@ function setLanguage(lang) {
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = t(node.dataset.i18n);
+  });
+
+  document.querySelectorAll("[data-i18n-html]").forEach((node) => {
+    node.innerHTML = t(node.dataset.i18nHtml);
   });
 
   document.querySelectorAll("[data-i18n-placeholder]").forEach((node) => {
