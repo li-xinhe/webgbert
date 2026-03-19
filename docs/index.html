@@ -3,66 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Comparative Manifesto Policy Analysis</title>
+    <title>Manifesto Policy Analysis Interface</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="site-header">
-        <div class="brand-block">
-          <p class="eyebrow" data-i18n="eyebrow">Comparative Policy Intelligence</p>
-          <h1 data-i18n="hero_title">Manifesto Policy Analysis Interface</h1>
-          <p class="hero-copy" data-i18n="hero_copy">
-            A research-facing interface for multilingual manifesto analysis, combining text interpretation
-            with macro-structural indicators across countries and years.
-          </p>
+    <div class="site-frame">
+      <header class="topbar">
+        <div class="topbar__brand">
+          <p class="topbar__eyebrow" data-i18n="eyebrow">Comparative Policy Intelligence</p>
+          <p class="topbar__name" data-i18n="brand_name">Manifesto Policy Analysis Interface</p>
         </div>
-
-        <div class="header-tools">
+        <div class="topbar__controls">
           <div class="language-switch" aria-label="Language switch">
-            <button type="button" class="lang-button active" data-lang="en">English</button>
-            <button type="button" class="lang-button" data-lang="ja">日本語</button>
-          </div>
-
-          <div class="header-note">
-            <p class="note-label" data-i18n="header_note_label">Interface Mode</p>
-            <p class="note-value" data-i18n="header_note_value">Academic and policy research use</p>
+            <button type="button" class="lang-button active" data-lang="en">EN</button>
+            <button type="button" class="lang-button" data-lang="ja">JP</button>
           </div>
         </div>
       </header>
 
-      <section class="intro-band">
-        <div class="intro-card">
-          <p class="intro-kicker" data-i18n="intro_kicker">Research Scope</p>
-          <p class="intro-text" data-i18n="intro_text">
-            This interface is designed for professional and scholarly presentation. It estimates policy category
-            distributions from manifesto text while incorporating country-specific and year-specific macro context.
-          </p>
-        </div>
-        <div class="intro-card">
-          <p class="intro-kicker" data-i18n="intro_kicker_2">Analytical Frame</p>
-          <p class="intro-text" data-i18n="intro_text_2">
-            The model evaluates manifesto language in relation to political context, macroeconomic structure, and
-            cross-national variation over time.
-          </p>
-        </div>
-      </section>
+      <main class="main-grid">
+        <section class="hero">
+          <div class="hero__inner">
+            <p class="hero__kicker" data-i18n="hero_kicker">Research Interface</p>
+            <h1 class="hero__title" data-i18n="hero_title">Multilingual manifesto analysis for comparative political research.</h1>
+            <p class="hero__copy" data-i18n="hero_copy">
+              A professional interface for analysing manifesto language in relation to country-year context,
+              macroeconomic structure, and cross-national policy variation.
+            </p>
 
-      <main class="layout">
-        <section class="panel form-panel">
-          <div class="section-head">
-            <h2 data-i18n="input_title">Inference Input</h2>
-            <p data-i18n="input_copy">
-              Submit a manifesto sentence or policy statement. Structural indicators are automatically applied on the
-              basis of the selected country and year.
+            <div class="hero__meta">
+              <div class="meta-card">
+                <p class="meta-card__label" data-i18n="meta_1_label">Focus</p>
+                <p class="meta-card__text" data-i18n="meta_1_text">Political text classification with structural context.</p>
+              </div>
+              <div class="meta-card">
+                <p class="meta-card__label" data-i18n="meta_2_label">Inputs</p>
+                <p class="meta-card__text" data-i18n="meta_2_text">Manifesto text, country selection, and year selection.</p>
+              </div>
+              <div class="meta-card">
+                <p class="meta-card__label" data-i18n="meta_3_label">Framework</p>
+                <p class="meta-card__text" data-i18n="meta_3_text">Macro indicators are applied automatically during inference.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel panel--input">
+          <div class="panel__head">
+            <p class="panel__eyebrow" data-i18n="input_kicker">Input</p>
+            <h2 class="panel__title" data-i18n="input_title">Run policy analysis</h2>
+            <p class="panel__copy" data-i18n="input_copy">
+              Submit a manifesto sentence or policy statement. Structural indicators are applied automatically
+              according to the selected country and year.
             </p>
           </div>
 
           <label class="field">
-            <span data-i18n="text_label">Policy Text</span>
+            <span class="field__label" data-i18n="text_label">Policy text</span>
             <textarea
               id="text-input"
-              rows="8"
+              rows="10"
               data-i18n-placeholder="text_placeholder"
               placeholder="The government will stabilize the labour market through training, targeted fiscal support, and industrial coordination."
             ></textarea>
@@ -70,80 +70,67 @@
 
           <div class="field-grid">
             <label class="field">
-              <span data-i18n="country_label">Country</span>
+              <span class="field__label" data-i18n="country_label">Country</span>
               <select id="country-select"></select>
             </label>
-
             <label class="field">
-              <span data-i18n="year_label">Year</span>
+              <span class="field__label" data-i18n="year_label">Year</span>
               <select id="year-select"></select>
             </label>
           </div>
 
-          <button id="predict-button" type="button" class="primary-button" data-i18n="predict_button">
-            Run Analysis
-          </button>
+          <button id="predict-button" type="button" class="primary-button" data-i18n="predict_button">Run analysis</button>
           <p id="form-message" class="form-message"></p>
 
           <div class="technical-access hidden">
             <p id="api-message" class="form-message"></p>
-            <input
-              id="api-base-url"
-              type="url"
-              value=""
-              autocomplete="off"
-              tabindex="-1"
-              aria-hidden="true"
-            />
+            <input id="api-base-url" type="url" value="" autocomplete="off" tabindex="-1" aria-hidden="true" />
             <button id="save-api-button" type="button">Save Endpoint</button>
             <button id="check-api-button" type="button">Verify Connection</button>
-            <p id="api-base-url-label"></p>
           </div>
         </section>
 
-        <section class="panel result-panel">
-          <div class="section-head">
-            <h2 data-i18n="result_title">Analytical Output</h2>
-            <p data-i18n="result_copy">
-              The interface reports the leading predicted policy categories together with the structural variables
-              used for the current inference.
+        <section class="panel panel--output">
+          <div class="panel__head">
+            <p class="panel__eyebrow" data-i18n="result_kicker">Output</p>
+            <h2 class="panel__title" data-i18n="result_title">Analytical output</h2>
+            <p class="panel__copy" data-i18n="result_copy">
+              The interface reports leading predicted policy categories together with the structural variables used
+              for the current inference.
             </p>
           </div>
 
           <div id="empty-state" class="empty-state" data-i18n="empty_state">
-            Once the connection is verified, analytical results will appear here.
+            Results will appear here after the analysis is completed.
           </div>
 
           <div id="result-content" class="result-content hidden">
-            <div class="result-block">
-              <h3 data-i18n="top_predictions">Top Predictions</h3>
+            <section class="result-section">
+              <h3 class="result-section__title" data-i18n="top_predictions">Top predictions</h3>
               <div id="prediction-list" class="prediction-list"></div>
-            </div>
+            </section>
 
-            <div class="result-block">
-              <h3 data-i18n="macro_title">Macro Variables from add/</h3>
+            <section class="result-section">
+              <h3 class="result-section__title" data-i18n="macro_title">Macro variables from add/</h3>
               <div id="macro-grid" class="macro-grid"></div>
-            </div>
+            </section>
           </div>
         </section>
       </main>
 
-      <footer class="site-footer">
-        <div class="footer-inner">
+      <footer class="footer">
+        <div class="footer__inner">
           <div>
-            <p class="footer-kicker" data-i18n="footer_kicker">Participating Institutions</p>
-            <p class="footer-orgs">
+            <p class="footer__label" data-i18n="footer_label">Participating Institutions</p>
+            <p class="footer__orgs">
               Otaru University of Commerce
-              <span class="footer-sep">/</span>
+              <span class="footer__sep">/</span>
               Tohoku University
-              <span class="footer-sep">/</span>
+              <span class="footer__sep">/</span>
               Takushoku University
             </p>
           </div>
-
-          <div class="footer-meta">
-            <p data-i18n="footer_meta">Research interface for comparative manifesto and policy analysis.</p>
-          </div>
+          <p class="footer__meta" data-i18n="footer_meta">Comparative manifesto and policy analysis research interface.</p>
         </div>
       </footer>
     </div>
