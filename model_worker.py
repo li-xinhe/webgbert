@@ -4,11 +4,17 @@ import json
 import os
 from pathlib import Path
 import sys
+import warnings
 
 import numpy as np
 
 
 def main() -> int:
+    warnings.filterwarnings(
+        "ignore",
+        message="enable_nested_tensor is True, but self.use_nested_tensor is False",
+    )
+
     try:
         payload = json.load(sys.stdin)
     except json.JSONDecodeError as exc:

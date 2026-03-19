@@ -248,7 +248,15 @@ class ManifestoInferenceService:
         if proc.returncode != 0:
             stderr = (proc.stderr or "").strip()
             stdout = (proc.stdout or "").strip()
-            detail = stderr or stdout or "Unknown model runtime failure."
+
+            detail = stdout or stderr or "Unknown model runtime failure."
+            try:
+                body = json.loads(stdout) if stdout else None
+            except json.JSONDecodeError:
+                body = None
+            if isinstance(body, dict) and body.get("error"):
+                detail = str(body["error"])
+
             raise RuntimeError(
                 "Model runtime is not ready. "
                 f"Worker process failed with: {detail}"
