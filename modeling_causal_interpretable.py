@@ -182,6 +182,7 @@ class CausalInterpretableForSequenceClassification(PreTrainedModel):
         num_years: int,
         **kwargs,
     ):
+        text_pretrained_kwargs = kwargs.pop("text_pretrained_kwargs", None) or {}
         text_cfg = AutoConfig.from_pretrained(text_model_name_or_path)
 
         config = CausalInterpretableConfig(
@@ -195,7 +196,11 @@ class CausalInterpretableForSequenceClassification(PreTrainedModel):
         )
 
         model = cls(config)
-        model.text_encoder = AutoModel.from_pretrained(text_model_name_or_path, config=text_cfg)
+        model.text_encoder = AutoModel.from_pretrained(
+            text_model_name_or_path,
+            config=text_cfg,
+            **text_pretrained_kwargs,
+        )
         return model
 
     def _encode_context(self, macro: torch.Tensor, country_id: torch.Tensor, year_id: torch.Tensor):
@@ -273,4 +278,3 @@ class CausalInterpretableForSequenceClassification(PreTrainedModel):
             )
 
         return CausalInterpretableOutput(loss=loss, logits=logits)
-

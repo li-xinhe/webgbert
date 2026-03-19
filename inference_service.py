@@ -55,6 +55,7 @@ class ManifestoInferenceService:
             "TEXT_MODEL_NAME_OR_PATH",
             "bert-base-multilingual-cased",
         ).strip()
+        self.torch_num_threads = int(os.environ.get("TORCH_NUM_THREADS", "1"))
 
         self.meta = self._load_meta()
         self.country_classes = [str(v) for v in self.meta["country_le"].classes_]
@@ -153,6 +154,7 @@ class ManifestoInferenceService:
             "modelRepoId": self.model_repo_id or None,
             "modelFilename": self.model_filename,
             "textModelNameOrPath": self.text_model_name_or_path,
+            "torchNumThreads": self.torch_num_threads,
         }
 
     def _validate_country(self, country: str) -> None:
@@ -230,6 +232,7 @@ class ManifestoInferenceService:
             "model_filename": self.model_filename,
             "hf_token": self.hf_token,
             "text_model_name_or_path": self.text_model_name_or_path,
+            "torch_num_threads": self.torch_num_threads,
             "standardized_values": standardized_values,
             "top_k": top_k,
         }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -29,6 +30,7 @@ def main() -> int:
         return 1
 
     try:
+        os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
         label_classes = payload["label_classes"]
         macro_cols = payload["macro_cols"]
         standardized_values = payload["standardized_values"]
@@ -36,6 +38,11 @@ def main() -> int:
         num_countries = int(payload["num_countries"])
         num_years = int(payload["num_years"])
         text_model_name_or_path = payload.get("text_model_name_or_path", "bert-base-multilingual-cased")
+        torch_num_threads = int(payload.get("torch_num_threads", 1))
+
+        torch.set_num_threads(torch_num_threads)
+        if hasattr(torch, "set_num_interop_threads"):
+            torch.set_num_interop_threads(1)
 
         model_path = Path(payload["model_path"])
         if not model_path.exists():
@@ -64,11 +71,18 @@ def main() -> int:
             num_macro=len(macro_cols),
             num_countries=num_countries,
             num_years=num_years,
+            text_pretrained_kwargs={"low_cpu_mem_usage": True},
         ).to(device)
 
-        state_dict = torch.load(model_path, map_location=device)
+        load_kwargs = {"map_location": device}
+        if "weights_only" in torch.load.__code__.co_varnames:
+            load_kwargs["weights_only"] = True
+        if "mmap" in torch.load.__code__.co_varnames:
+            load_kwargs["mmap"] = True
+        state_dict = torch.load(model_path, **load_kwargs)
         model.load_state_dict(state_dict)
         model.eval()
+        model.requires_grad_(False)
 
         tokenizer = AutoTokenizer.from_pretrained(text_model_name_or_path)
         encoded = tokenizer(
@@ -79,7 +93,7 @@ def main() -> int:
             return_tensors="pt",
         )
 
-        with torch.no_grad():
+        with torch.inference_mode():
             output = model(
                 input_ids=encoded["input_ids"].to(device),
                 attention_mask=encoded["attention_mask"].to(device),
