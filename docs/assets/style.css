@@ -368,7 +368,7 @@ textarea {
 }
 
 .footer__contact {
-  margin-top: 18px;
+  margin-top: 28px;
 }
 
 .footer__contact-text {
@@ -383,7 +383,7 @@ textarea {
 }
 
 .footer__contact-text p + p {
-  margin-top: 8px;
+  margin-top: 4px;
 }
 
 .footer__contact-text a {
