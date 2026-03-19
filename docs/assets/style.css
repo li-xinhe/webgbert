@@ -141,6 +141,40 @@ textarea {
   flex-wrap: wrap;
 }
 
+.api-status-card {
+  margin-top: 22px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.api-status-label {
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.api-status-value {
+  margin: 0;
+  word-break: break-all;
+  font-weight: 800;
+}
+
+.advanced-box {
+  margin-top: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 14px 16px 18px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.advanced-box summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
 .primary-button,
 .secondary-button,
 .ghost-button {

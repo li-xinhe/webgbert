@@ -19,25 +19,33 @@
       <main class="layout">
         <section class="panel form-panel">
           <div class="section-head">
-            <h2>连接后端</h2>
-            <p>先填写后端 API 地址。浏览器会自动保存在本地，下次打开页面会继续使用。</p>
+            <h2>已连接后端</h2>
+            <p>普通访问者不需要做任何配置，页面会直接调用已经发布好的在线推理 API。</p>
           </div>
 
-          <label class="field">
-            <span>后端 API Base URL</span>
-            <input
-              id="api-base-url"
-              type="url"
-              placeholder="例如：https://your-backend.onrender.com"
-            />
-          </label>
-
-          <div class="button-row">
-            <button id="save-api-button" class="secondary-button">保存地址</button>
-            <button id="check-api-button" class="ghost-button">检查连接</button>
+          <div class="api-status-card">
+            <p class="api-status-label">当前 API</p>
+            <p id="api-base-url-label" class="api-status-value"></p>
           </div>
-
           <p id="api-message" class="form-message"></p>
+
+          <details class="advanced-box">
+            <summary>高级设置：更换后端地址</summary>
+
+            <label class="field">
+              <span>后端 API Base URL</span>
+              <input
+                id="api-base-url"
+                type="url"
+                placeholder="例如：https://your-backend.onrender.com"
+              />
+            </label>
+
+            <div class="button-row">
+              <button id="save-api-button" class="secondary-button">保存地址</button>
+              <button id="check-api-button" class="ghost-button">检查连接</button>
+            </div>
+          </details>
 
           <div class="divider"></div>
 
@@ -78,7 +86,7 @@
           </div>
 
           <div id="empty-state" class="empty-state">
-            先保存后端地址并检查连接，然后就可以开始预测。
+            连接成功后就可以开始预测。
           </div>
 
           <div id="result-content" class="result-content hidden">

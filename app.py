@@ -3,7 +3,7 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
-from flask import Flask, jsonify, render_template, request
+from flask import Flask, jsonify, request
 
 from inference_service import ManifestoInferenceService
 
@@ -43,7 +43,18 @@ def add_cors_headers(response):
 
 @app.get("/")
 def index():
-    return render_template("index.html")
+    runtime = service.runtime_config()
+    return jsonify(
+        {
+            "service": "manifesto-model-api",
+            "status": "ok",
+            "health": "/api/health",
+            "options": "/api/options",
+            "predict": "/api/predict",
+            "localModelExists": runtime["localModelExists"],
+            "modelRepoId": runtime["modelRepoId"],
+        }
+    )
 
 
 @app.route("/health", methods=["GET", "OPTIONS"])

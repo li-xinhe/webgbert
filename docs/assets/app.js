@@ -1,4 +1,8 @@
+const DEFAULT_API_BASE_URL = "https://webgbert.onrender.com";
+const API_STORAGE_KEY = "manifesto_api_base_url";
+
 const apiBaseUrlInput = document.getElementById("api-base-url");
+const apiBaseUrlLabel = document.getElementById("api-base-url-label");
 const saveApiButton = document.getElementById("save-api-button");
 const checkApiButton = document.getElementById("check-api-button");
 const apiMessage = document.getElementById("api-message");
@@ -12,7 +16,6 @@ const resultContent = document.getElementById("result-content");
 const predictionList = document.getElementById("prediction-list");
 const macroGrid = document.getElementById("macro-grid");
 
-const API_STORAGE_KEY = "manifesto_api_base_url";
 let yearsByCountry = {};
 
 function normalizeBaseUrl(rawValue) {
@@ -20,7 +23,9 @@ function normalizeBaseUrl(rawValue) {
 }
 
 function getBaseUrl() {
-  return normalizeBaseUrl(apiBaseUrlInput.value || localStorage.getItem(API_STORAGE_KEY) || "");
+  return normalizeBaseUrl(
+    apiBaseUrlInput.value || localStorage.getItem(API_STORAGE_KEY) || DEFAULT_API_BASE_URL
+  );
 }
 
 function setApiMessage(message, isError = false) {
@@ -36,9 +41,14 @@ function setFormMessage(message, isError = false) {
 function buildApiUrl(path) {
   const baseUrl = getBaseUrl();
   if (!baseUrl) {
-    throw new Error("请先填写后端 API Base URL。");
+    throw new Error("当前没有可用的后端地址。");
   }
   return `${baseUrl}${path}`;
+}
+
+function refreshApiLabel() {
+  const baseUrl = getBaseUrl();
+  apiBaseUrlLabel.textContent = baseUrl || "未配置";
 }
 
 function fillYears(country) {
@@ -131,6 +141,7 @@ function saveBaseUrl() {
   }
   localStorage.setItem(API_STORAGE_KEY, baseUrl);
   apiBaseUrlInput.value = baseUrl;
+  refreshApiLabel();
   setApiMessage("后端地址已保存。");
 }
 
@@ -198,10 +209,9 @@ predictButton.addEventListener("click", async () => {
   }
 });
 
-apiBaseUrlInput.value = localStorage.getItem(API_STORAGE_KEY) || "";
+apiBaseUrlInput.value = localStorage.getItem(API_STORAGE_KEY) || DEFAULT_API_BASE_URL;
+refreshApiLabel();
 
-if (apiBaseUrlInput.value) {
-  checkConnection().catch((error) => {
-    setApiMessage(error.message, true);
-  });
-}
+checkConnection().catch((error) => {
+  setApiMessage(error.message, true);
+});

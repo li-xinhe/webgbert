@@ -53,6 +53,7 @@ http://127.0.0.1:8000
 2. Flask 只负责独立后端 API，主要接口是 `/api/health`、`/api/options`、`/api/predict`
 
 前端不会依赖 Flask 模板，也不会依赖同域部署。访问者第一次打开 GitHub Pages 页面时，只需要填写一次后端地址，浏览器会自动保存。
+如果你已经有固定的线上后端地址，也可以直接把它写进 `docs/assets/app.js`，这样普通用户打开页面就能直接使用。
 
 ### GitHub Pages 部署
 
