@@ -1,107 +1,174 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Manifesto Model Demo</title>
+    <title>Comparative Manifesto Policy Analysis</title>
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
     <div class="page-shell">
-      <header class="hero">
-        <p class="eyebrow">Manifesto Policy Classifier</p>
-        <h1>GitHub Pages 前端 + 独立后端 API</h1>
-        <p class="hero-copy">
-          这个页面可以直接部署到 GitHub Pages。前端只负责收集输入，预测请求会发送到你单独部署的后端 API。
-        </p>
+      <header class="site-header">
+        <div class="brand-block">
+          <p class="eyebrow" data-i18n="eyebrow">Comparative Policy Intelligence</p>
+          <h1 data-i18n="hero_title">Manifesto Policy Analysis Interface</h1>
+          <p class="hero-copy" data-i18n="hero_copy">
+            A research-facing interface for multilingual manifesto analysis, combining text interpretation
+            with macro-structural indicators across countries and years.
+          </p>
+        </div>
+
+        <div class="header-tools">
+          <div class="language-switch" aria-label="Language switch">
+            <button type="button" class="lang-button active" data-lang="en">English</button>
+            <button type="button" class="lang-button" data-lang="ja">日本語</button>
+          </div>
+
+          <div class="header-note">
+            <p class="note-label" data-i18n="header_note_label">Interface Mode</p>
+            <p class="note-value" data-i18n="header_note_value">Academic and policy research use</p>
+          </div>
+        </div>
       </header>
+
+      <section class="intro-band">
+        <div class="intro-card">
+          <p class="intro-kicker" data-i18n="intro_kicker">Research Scope</p>
+          <p class="intro-text" data-i18n="intro_text">
+            This interface is designed for professional and scholarly presentation. It estimates policy category
+            distributions from manifesto text while incorporating country-specific and year-specific macro context.
+          </p>
+        </div>
+        <div class="intro-card">
+          <p class="intro-kicker" data-i18n="intro_kicker_2">Operational Status</p>
+          <p class="intro-text" data-i18n="intro_text_2">
+            The public interface connects to a deployed inference API. Advanced users may still override the API
+            endpoint for staging or verification.
+          </p>
+        </div>
+      </section>
 
       <main class="layout">
         <section class="panel form-panel">
           <div class="section-head">
-            <h2>已连接后端</h2>
-            <p>普通访问者不需要做任何配置，页面会直接调用已经发布好的在线推理 API。</p>
+            <h2 data-i18n="backend_title">Connected API</h2>
+            <p data-i18n="backend_copy">
+              General visitors do not need to configure anything. The page is connected to the deployed online
+              inference service by default.
+            </p>
           </div>
 
           <div class="api-status-card">
-            <p class="api-status-label">当前 API</p>
+            <p class="api-status-label" data-i18n="api_label">Current API</p>
             <p id="api-base-url-label" class="api-status-value"></p>
           </div>
           <p id="api-message" class="form-message"></p>
 
           <details class="advanced-box">
-            <summary>高级设置：更换后端地址</summary>
+            <summary data-i18n="advanced_summary">Advanced Settings: change backend endpoint</summary>
 
             <label class="field">
-              <span>后端 API Base URL</span>
+              <span data-i18n="api_input_label">Backend API Base URL</span>
               <input
                 id="api-base-url"
                 type="url"
-                placeholder="例如：https://your-backend.onrender.com"
+                placeholder="https://your-backend.onrender.com"
               />
             </label>
 
             <div class="button-row">
-              <button id="save-api-button" class="secondary-button">保存地址</button>
-              <button id="check-api-button" class="ghost-button">检查连接</button>
+              <button id="save-api-button" type="button" class="secondary-button" data-i18n="save_api">
+                Save Endpoint
+              </button>
+              <button id="check-api-button" type="button" class="ghost-button" data-i18n="check_api">
+                Verify Connection
+              </button>
             </div>
           </details>
 
           <div class="divider"></div>
 
           <div class="section-head">
-            <h2>推理输入</h2>
-            <p>文本由访问者输入，宏观变量由后端根据国家和年份自动从 <code>add/</code> 中读取。</p>
+            <h2 data-i18n="input_title">Inference Input</h2>
+            <p data-i18n="input_copy">
+              Users provide manifesto text. Macro indicators are automatically retrieved by the backend from the
+              `add/` dataset using the selected country and year.
+            </p>
           </div>
 
           <label class="field">
-            <span>政策文本</span>
+            <span data-i18n="text_label">Policy Text</span>
             <textarea
               id="text-input"
               rows="8"
-              placeholder="例如：政府将通过就业培训、财政支持和产业政策来稳定劳动力市场。"
+              data-i18n-placeholder="text_placeholder"
+              placeholder="The government will stabilize the labour market through training, targeted fiscal support, and industrial coordination."
             ></textarea>
           </label>
 
           <div class="field-grid">
             <label class="field">
-              <span>国家</span>
+              <span data-i18n="country_label">Country</span>
               <select id="country-select"></select>
             </label>
 
             <label class="field">
-              <span>年份</span>
+              <span data-i18n="year_label">Year</span>
               <select id="year-select"></select>
             </label>
           </div>
 
-          <button id="predict-button" class="primary-button">开始预测</button>
+          <button id="predict-button" type="button" class="primary-button" data-i18n="predict_button">
+            Run Analysis
+          </button>
           <p id="form-message" class="form-message"></p>
         </section>
 
         <section class="panel result-panel">
           <div class="section-head">
-            <h2>预测结果</h2>
-            <p>显示 Top-5 类别和本次推理实际使用的外界变量。</p>
+            <h2 data-i18n="result_title">Analytical Output</h2>
+            <p data-i18n="result_copy">
+              The interface reports the leading predicted policy categories together with the structural variables
+              used for the current inference.
+            </p>
           </div>
 
-          <div id="empty-state" class="empty-state">
-            连接成功后就可以开始预测。
+          <div id="empty-state" class="empty-state" data-i18n="empty_state">
+            Once the connection is verified, analytical results will appear here.
           </div>
 
           <div id="result-content" class="result-content hidden">
             <div class="result-block">
-              <h3>Top Predictions</h3>
+              <h3 data-i18n="top_predictions">Top Predictions</h3>
               <div id="prediction-list" class="prediction-list"></div>
             </div>
 
             <div class="result-block">
-              <h3>Macro Variables From <code>add/</code></h3>
+              <h3 data-i18n="macro_title">Macro Variables from add/</h3>
               <div id="macro-grid" class="macro-grid"></div>
             </div>
           </div>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div>
+            <p class="footer-kicker" data-i18n="footer_kicker">Participating Institutions</p>
+            <p class="footer-orgs">
+              Otaru University of Commerce
+              <span class="footer-sep">/</span>
+              Tohoku University
+              <span class="footer-sep">/</span>
+              Takushoku University
+            </p>
+          </div>
+
+          <div class="footer-meta">
+            <p data-i18n="footer_meta">Research interface for comparative manifesto and policy analysis.</p>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <script src="./assets/app.js"></script>
