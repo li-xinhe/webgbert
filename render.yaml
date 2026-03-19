@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: manifesto-model-demo
+    runtime: docker
+    plan: starter
+    autoDeploy: true
