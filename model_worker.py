@@ -9,6 +9,22 @@ import warnings
 import numpy as np
 
 
+def _normalize_state_dict_keys(state_dict: dict) -> dict:
+    normalized = {}
+    for key, value in state_dict.items():
+        new_key = key
+        if new_key.startswith("module."):
+            new_key = new_key[len("module."):]
+        if new_key.startswith("bert."):
+            new_key = "text_encoder." + new_key[len("bert."):]
+        if new_key == "ctx_to_bert.weight":
+            new_key = "ctx_to_text.weight"
+        elif new_key == "ctx_to_bert.bias":
+            new_key = "ctx_to_text.bias"
+        normalized[new_key] = value
+    return normalized
+
+
 def main() -> int:
     warnings.filterwarnings(
         "ignore",
@@ -86,6 +102,9 @@ def main() -> int:
         if "mmap" in torch.load.__code__.co_varnames:
             load_kwargs["mmap"] = True
         state_dict = torch.load(model_path, **load_kwargs)
+        if isinstance(state_dict, dict) and "state_dict" in state_dict and isinstance(state_dict["state_dict"], dict):
+            state_dict = state_dict["state_dict"]
+        state_dict = _normalize_state_dict_keys(state_dict)
         model.load_state_dict(state_dict)
         model.eval()
         model.requires_grad_(False)
