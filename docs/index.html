@@ -7,13 +7,23 @@
     <link rel="stylesheet" href="./assets/style.css" />
   </head>
   <body>
-    <div class="site-frame">
-      <header class="topbar">
-        <div class="topbar__brand">
-          <p class="topbar__eyebrow" data-i18n="eyebrow">Comparative Policy Intelligence</p>
-          <p class="topbar__name" data-i18n="brand_name">Manifesto Policy Analysis Interface</p>
-        </div>
-        <div class="topbar__controls">
+    <div class="page-shell">
+      <header class="masthead">
+        <div class="masthead__inner">
+          <a class="brandmark" href="#top" aria-label="Home">
+            <span class="brandmark__crest">MP</span>
+            <span class="brandmark__text">
+              <span class="brandmark__eyebrow" data-i18n="eyebrow">Comparative Policy Intelligence</span>
+              <span class="brandmark__name" data-i18n="brand_name">Manifesto Policy Analysis Interface</span>
+            </span>
+          </a>
+
+          <nav class="primary-nav" aria-label="Primary">
+            <a href="#analysis-tool" data-i18n="nav_tool">Analysis Tool</a>
+            <a href="#authors" data-i18n="nav_authors">Principal Authors</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
+          </nav>
+
           <div class="language-switch" aria-label="Language switch">
             <button type="button" class="lang-button active" data-lang="en">EN</button>
             <button type="button" class="lang-button" data-lang="ja">JP</button>
@@ -21,100 +31,117 @@
         </div>
       </header>
 
-      <main class="main-grid">
-        <section class="hero">
-          <div class="hero__inner">
-            <p class="hero__kicker" data-i18n="hero_kicker">Research Interface</p>
-            <h1 class="hero__title" data-i18n="hero_title">Multilingual manifesto analysis for comparative political research.</h1>
-            <p class="hero__copy" data-i18n="hero_copy">
-              A professional interface for analysing manifesto language in relation to country-year context,
-              macroeconomic structure, and cross-national policy variation.
-            </p>
+      <main class="layout" id="top">
+        <section class="intro-panel">
+          <p class="intro-panel__kicker" data-i18n="hero_kicker">Policy Inference Platform</p>
+          <h1 class="intro-panel__title" data-i18n="hero_title">
+            Multilingual manifesto classification with country-year context.
+          </h1>
+          <p class="intro-panel__copy" data-i18n="hero_copy">
+            A research-grade interface for cross-national political text analysis.
+          </p>
 
-            <div class="hero__meta">
-              <div class="meta-card">
-                <p class="meta-card__label" data-i18n="meta_1_label">Focus</p>
-                <p class="meta-card__text" data-i18n="meta_1_text">Political text classification with structural context.</p>
-              </div>
-              <div class="meta-card">
-                <p class="meta-card__label" data-i18n="meta_2_label">Inputs</p>
-                <p class="meta-card__text" data-i18n="meta_2_text">Manifesto text, country selection, and year selection.</p>
-              </div>
-              <div class="meta-card">
-                <p class="meta-card__label" data-i18n="meta_3_label">Framework</p>
-                <p class="meta-card__text" data-i18n="meta_3_text">Macro indicators are applied automatically during inference.</p>
-              </div>
+          <div class="signal-grid">
+            <div class="signal-card">
+              <p class="signal-card__label" data-i18n="meta_1_label">Function</p>
+              <p class="signal-card__text" data-i18n="meta_1_text">Policy text inference with structural variables.</p>
+            </div>
+            <div class="signal-card">
+              <p class="signal-card__label" data-i18n="meta_2_label">Input</p>
+              <p class="signal-card__text" data-i18n="meta_2_text">Text, country, and year.</p>
+            </div>
+            <div class="signal-card">
+              <p class="signal-card__label" data-i18n="meta_3_label">Context</p>
+              <p class="signal-card__text" data-i18n="meta_3_text">Macroeconomic indicators applied automatically.</p>
             </div>
           </div>
         </section>
 
-        <section class="panel panel--input">
-          <div class="panel__head">
-            <p class="panel__eyebrow" data-i18n="input_kicker">Input</p>
-            <h2 class="panel__title" data-i18n="input_title">Run policy analysis</h2>
-            <p class="panel__copy" data-i18n="input_copy">
-              Submit a manifesto sentence or policy statement. Structural indicators are applied automatically
-              according to the selected country and year.
-            </p>
-          </div>
+        <section class="workspace" id="analysis-tool">
+          <section class="panel panel--input">
+            <div class="panel__head">
+              <p class="panel__eyebrow" data-i18n="input_kicker">Analysis Tool</p>
+              <h2 class="panel__title" data-i18n="input_title">Inference Console</h2>
+              <p class="panel__copy" data-i18n="input_copy">
+                Enter a policy statement and run model inference.
+              </p>
+            </div>
 
-          <label class="field">
-            <span class="field__label" data-i18n="text_label">Policy text</span>
-            <textarea
-              id="text-input"
-              rows="10"
-              data-i18n-placeholder="text_placeholder"
-              placeholder="The government will stabilize the labour market through training, targeted fiscal support, and industrial coordination."
-            ></textarea>
-          </label>
-
-          <div class="field-grid">
             <label class="field">
-              <span class="field__label" data-i18n="country_label">Country</span>
-              <select id="country-select"></select>
+              <span class="field__label" data-i18n="text_label">Policy Text</span>
+              <textarea
+                id="text-input"
+                rows="10"
+                data-i18n-placeholder="text_placeholder"
+                placeholder="The government will stabilize the labour market through training, targeted fiscal support, and industrial coordination."
+              ></textarea>
             </label>
-            <label class="field">
-              <span class="field__label" data-i18n="year_label">Year</span>
-              <select id="year-select"></select>
-            </label>
-          </div>
 
-          <button id="predict-button" type="button" class="primary-button" data-i18n="predict_button">Run analysis</button>
-          <p id="form-message" class="form-message"></p>
+            <div class="field-grid">
+              <label class="field">
+                <span class="field__label" data-i18n="country_label">Country</span>
+                <select id="country-select"></select>
+              </label>
+              <label class="field">
+                <span class="field__label" data-i18n="year_label">Year</span>
+                <select id="year-select"></select>
+              </label>
+            </div>
 
-          <div class="technical-access hidden">
-            <p id="api-message" class="form-message"></p>
-            <input id="api-base-url" type="url" value="" autocomplete="off" tabindex="-1" aria-hidden="true" />
-            <button id="save-api-button" type="button">Save Endpoint</button>
-            <button id="check-api-button" type="button">Verify Connection</button>
-          </div>
+            <button id="predict-button" type="button" class="primary-button" data-i18n="predict_button">Run Analysis</button>
+            <p id="form-message" class="form-message"></p>
+
+            <div class="technical-access hidden">
+              <p id="api-message" class="form-message"></p>
+              <input id="api-base-url" type="url" value="" autocomplete="off" tabindex="-1" aria-hidden="true" />
+              <button id="save-api-button" type="button">Save Endpoint</button>
+              <button id="check-api-button" type="button">Verify Connection</button>
+            </div>
+          </section>
+
+          <section class="panel panel--output">
+            <div class="panel__head">
+              <p class="panel__eyebrow" data-i18n="result_kicker">Output</p>
+              <h2 class="panel__title" data-i18n="result_title">Model Output</h2>
+              <p class="panel__copy" data-i18n="result_copy">
+                Top policy categories and the variables used for inference.
+              </p>
+            </div>
+
+            <div id="empty-state" class="empty-state" data-i18n="empty_state">
+              Results appear after inference.
+            </div>
+
+            <div id="result-content" class="result-content hidden">
+              <section class="result-section">
+                <h3 class="result-section__title" data-i18n="top_predictions">Top Predictions</h3>
+                <div id="prediction-list" class="prediction-list"></div>
+              </section>
+
+              <section class="result-section">
+                <h3 class="result-section__title" data-i18n="macro_title">Macro Variables</h3>
+                <div id="macro-grid" class="macro-grid"></div>
+              </section>
+            </div>
+          </section>
         </section>
 
-        <section class="panel panel--output">
-          <div class="panel__head">
-            <p class="panel__eyebrow" data-i18n="result_kicker">Output</p>
-            <h2 class="panel__title" data-i18n="result_title">Analytical output</h2>
-            <p class="panel__copy" data-i18n="result_copy">
-              The interface reports leading predicted policy categories together with the structural variables used
-              for the current inference.
+        <section class="info-grid">
+          <section class="info-card" id="authors">
+            <p class="info-card__label" data-i18n="authors_label">Principal Authors</p>
+            <h2 class="info-card__title" data-i18n="authors_title">Research Team</h2>
+            <p class="info-card__copy" data-i18n="authors_copy">
+              Author information can be placed here for the public release.
             </p>
-          </div>
+          </section>
 
-          <div id="empty-state" class="empty-state" data-i18n="empty_state">
-            Results will appear here after the analysis is completed.
-          </div>
-
-          <div id="result-content" class="result-content hidden">
-            <section class="result-section">
-              <h3 class="result-section__title" data-i18n="top_predictions">Top predictions</h3>
-              <div id="prediction-list" class="prediction-list"></div>
-            </section>
-
-            <section class="result-section">
-              <h3 class="result-section__title" data-i18n="macro_title">Macro variables from add/</h3>
-              <div id="macro-grid" class="macro-grid"></div>
-            </section>
-          </div>
+          <section class="info-card" id="contact">
+            <p class="info-card__label" data-i18n="contact_label">Contact</p>
+            <h2 class="info-card__title" data-i18n="contact_title">Research Enquiries</h2>
+            <p class="info-card__copy" data-i18n="contact_copy">
+              Add institutional contact details here for correspondence and collaboration.
+            </p>
+          </section>
         </section>
       </main>
 
@@ -137,4 +164,4 @@
 
     <script src="./assets/app.js"></script>
   </body>
-  </html>
+</html>
