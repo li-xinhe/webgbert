@@ -14,20 +14,12 @@ const translations = {
     intro_kicker: "Research Scope",
     intro_text:
       "This interface is designed for professional and scholarly presentation. It estimates policy category distributions from manifesto text while incorporating country-specific and year-specific macro context.",
-    intro_kicker_2: "Operational Status",
+    intro_kicker_2: "Analytical Frame",
     intro_text_2:
-      "The public interface connects to a deployed inference API. Advanced users may still override the API endpoint for staging or verification.",
-    backend_title: "Connected API",
-    backend_copy:
-      "General visitors do not need to configure anything. The page is connected to the deployed online inference service by default.",
-    api_label: "Current API",
-    advanced_summary: "Advanced Settings: change backend endpoint",
-    api_input_label: "Backend API Base URL",
-    save_api: "Save Endpoint",
-    check_api: "Verify Connection",
+      "The model evaluates manifesto language in relation to political context, macroeconomic structure, and cross-national variation over time.",
     input_title: "Inference Input",
     input_copy:
-      "Users provide manifesto text. Macro indicators are automatically retrieved by the backend from the `add/` dataset using the selected country and year.",
+      "Submit a manifesto sentence or policy statement. Structural indicators are automatically applied on the basis of the selected country and year.",
     text_label: "Policy Text",
     text_placeholder:
       "The government will stabilize the labour market through training, targeted fiscal support, and industrial coordination.",
@@ -70,20 +62,12 @@ const translations = {
     intro_kicker: "研究対象",
     intro_text:
       "本インターフェースは、専門的かつ学術的な提示を目的として設計されています。マニフェスト文の政策カテゴリ分布を、国別・年別のマクロ文脈を踏まえて推定します。",
-    intro_kicker_2: "運用状況",
+    intro_kicker_2: "分析枠組み",
     intro_text_2:
-      "公開インターフェースはデプロイ済み推論 API に接続されています。検証やステージングのために、高度な設定から接続先を変更することもできます。",
-    backend_title: "接続中の API",
-    backend_copy:
-      "通常の利用者は追加設定を行う必要はありません。ページは既定で公開済みのオンライン推論サービスに接続されています。",
-    api_label: "現在の API",
-    advanced_summary: "詳細設定: バックエンド接続先の変更",
-    api_input_label: "バックエンド API Base URL",
-    save_api: "接続先を保存",
-    check_api: "接続を確認",
+      "本モデルは、政治的文脈、マクロ経済構造、そして時系列における国家間差異との関係の中でマニフェスト文を評価します。",
     input_title: "推論入力",
     input_copy:
-      "利用者はマニフェスト文を入力します。マクロ指標は、選択した国と年に基づいてバックエンドが `add/` データセットから自動取得します。",
+      "マニフェスト文または政策文を入力してください。構造指標は、選択した国と年に基づいて自動的に適用されます。",
     text_label: "政策テキスト",
     text_placeholder:
       "政府は、訓練、重点的な財政支援、産業政策の連携によって労働市場を安定化させる。",
@@ -118,7 +102,6 @@ const translations = {
 };
 
 const apiBaseUrlInput = document.getElementById("api-base-url");
-const apiBaseUrlLabel = document.getElementById("api-base-url-label");
 const saveApiButton = document.getElementById("save-api-button");
 const checkApiButton = document.getElementById("check-api-button");
 const apiMessage = document.getElementById("api-message");
@@ -195,8 +178,7 @@ function buildApiUrl(path) {
 }
 
 function refreshApiLabel() {
-  const baseUrl = getBaseUrl();
-  apiBaseUrlLabel.textContent = baseUrl || t("api_missing");
+  return getBaseUrl();
 }
 
 function fillYears(country) {

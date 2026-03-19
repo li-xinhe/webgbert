@@ -40,10 +40,10 @@
           </p>
         </div>
         <div class="intro-card">
-          <p class="intro-kicker" data-i18n="intro_kicker_2">Operational Status</p>
+          <p class="intro-kicker" data-i18n="intro_kicker_2">Analytical Frame</p>
           <p class="intro-text" data-i18n="intro_text_2">
-            The public interface connects to a deployed inference API. Advanced users may still override the API
-            endpoint for staging or verification.
+            The model evaluates manifesto language in relation to political context, macroeconomic structure, and
+            cross-national variation over time.
           </p>
         </div>
       </section>
@@ -51,48 +51,10 @@
       <main class="layout">
         <section class="panel form-panel">
           <div class="section-head">
-            <h2 data-i18n="backend_title">Connected API</h2>
-            <p data-i18n="backend_copy">
-              General visitors do not need to configure anything. The page is connected to the deployed online
-              inference service by default.
-            </p>
-          </div>
-
-          <div class="api-status-card">
-            <p class="api-status-label" data-i18n="api_label">Current API</p>
-            <p id="api-base-url-label" class="api-status-value"></p>
-          </div>
-          <p id="api-message" class="form-message"></p>
-
-          <details class="advanced-box">
-            <summary data-i18n="advanced_summary">Advanced Settings: change backend endpoint</summary>
-
-            <label class="field">
-              <span data-i18n="api_input_label">Backend API Base URL</span>
-              <input
-                id="api-base-url"
-                type="url"
-                placeholder="https://your-backend.onrender.com"
-              />
-            </label>
-
-            <div class="button-row">
-              <button id="save-api-button" type="button" class="secondary-button" data-i18n="save_api">
-                Save Endpoint
-              </button>
-              <button id="check-api-button" type="button" class="ghost-button" data-i18n="check_api">
-                Verify Connection
-              </button>
-            </div>
-          </details>
-
-          <div class="divider"></div>
-
-          <div class="section-head">
             <h2 data-i18n="input_title">Inference Input</h2>
             <p data-i18n="input_copy">
-              Users provide manifesto text. Macro indicators are automatically retrieved by the backend from the
-              `add/` dataset using the selected country and year.
+              Submit a manifesto sentence or policy statement. Structural indicators are automatically applied on the
+              basis of the selected country and year.
             </p>
           </div>
 
@@ -122,6 +84,21 @@
             Run Analysis
           </button>
           <p id="form-message" class="form-message"></p>
+
+          <div class="technical-access hidden">
+            <p id="api-message" class="form-message"></p>
+            <input
+              id="api-base-url"
+              type="url"
+              value=""
+              autocomplete="off"
+              tabindex="-1"
+              aria-hidden="true"
+            />
+            <button id="save-api-button" type="button">Save Endpoint</button>
+            <button id="check-api-button" type="button">Verify Connection</button>
+            <p id="api-base-url-label"></p>
+          </div>
         </section>
 
         <section class="panel result-panel">
