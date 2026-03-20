@@ -89,7 +89,7 @@ const translations = {
     footer_label: "参加機関",
     contact_footer_html:
       '<p>李昕翮，講師，小樽商科大学。</p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 北海道小樽市緑3丁目5番21号　4号館　456号室</p>',
-    footer_meta: "比較マニフェスト・政策分析のための研究インターフェース。",
+    footer_meta: "このウェブサイトは、学術および教育目的のみに使用されます。",
     api_missing: "利用可能なバックエンド接続先がありません。",
     api_saved: "バックエンド接続先を保存しました。",
     api_saved_error: "バックエンド接続先を入力してください。",
