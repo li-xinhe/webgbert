@@ -37,7 +37,7 @@ const translations = {
     footer_label: "Participating Institutions",
     contact_footer_html:
       '<p>Xinhe Li, tenured lecturer, Otaru University of Commerce</p><p>Email: <a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>Address: Room 456 (Li Lab), Building 4, 3-5-21 Midori, Otaru, Hokkaido 047-8501, Japan</p>',
-    footer_meta: "Thanks for Manifesto project. Version: 2025-1. Berlin: WZB Berlin Social Science Center/Göttingen: Institute for Democracy Research (IfDem).This website is for academic and educational use only. ",
+    footer_meta: "Thanks for Manifesto project. Berlin: WZB Berlin Social Science Center/Göttingen: Institute for Democracy Research (IfDem).This website is for academic and educational use only. ",
     api_missing: "No backend endpoint is currently available.",
     api_saved: "Backend endpoint saved.",
     api_saved_error: "Please enter a backend endpoint.",
@@ -89,7 +89,7 @@ const translations = {
     footer_label: "参加機関",
     contact_footer_html:
       '<p>李昕翮，講師，小樽商科大学。</p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 北海道小樽市緑3丁目5番21号　4号館　456号室</p>',
-    footer_meta: "このウェブサイトは、学術および教育目的のみに使用されます。",
+    footer_meta: "Manifestoプロジェクトに感謝いたします。<br>バージョン：2025-1。ベルリン：WZBベルリン社会科学センター／ゲッティンゲン：民主主義研究所（IfDem）このウェブサイトは、学術および教育目的のみに使用されます。",
     api_missing: "利用可能なバックエンド接続先がありません。",
     api_saved: "バックエンド接続先を保存しました。",
     api_saved_error: "バックエンド接続先を入力してください。",
