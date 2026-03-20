@@ -108,12 +108,12 @@ const translations = {
   },
   zh: {
     page_title: "比较宣言政策分析",
-    eyebrow: "比较政策智能",
+    eyebrow: "比较政策人口智能",
     brand_name: "宣言政策分析界面",
     hero_kicker: "研究界面",
-    hero_title: "面向比较政治研究的多语言宣言分析。",
+    hero_title: "比较政治的多语言政治宣言分析",
     hero_copy:
-      "一个专业界面，用于结合国家-年份情境、宏观经济结构和跨国政策差异来分析政治宣言文本。",
+      "一个专门网站，用于结合国家-年份情境、宏观经济结构和跨国政策差异来分析政治宣言文本。",
     meta_1_label: "重点",
     meta_1_text: "结合结构背景的政治文本分类。",
     meta_2_label: "输入",
