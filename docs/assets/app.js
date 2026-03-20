@@ -88,7 +88,7 @@ const translations = {
     macro_title: "add/ から取得したマクロ変数",
     footer_label: "参加機関",
     contact_footer_html:
-      '<p>李昕翮，讲师，小樽商科大学。</p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室（李研）</p>',
+      '<p>李昕翮，講師，小樽商科大学。</p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 小樽市緑3丁目5番21号　4号馆　456号室</p>',
     footer_meta: "比較マニフェスト・政策分析のための研究インターフェース。",
     api_missing: "利用可能なバックエンド接続先がありません。",
     api_saved: "バックエンド接続先を保存しました。",
