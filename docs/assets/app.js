@@ -108,7 +108,7 @@ const translations = {
   },
   zh: {
     page_title: "比较宣言政策分析",
-    eyebrow: "比较政策人口智能",
+    eyebrow: "比较政策人工智能",
     brand_name: "宣言政策分析界面",
     hero_kicker: "研究界面",
     hero_title: "比较政治的多语言政治宣言分析",
