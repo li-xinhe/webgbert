@@ -10,7 +10,7 @@ const translations = {
     hero_kicker: "Research Interface",
     hero_title: "Multilingual manifesto analysis for comparative political research.",
     hero_copy:
-      "A professional interface for analysing manifesto language in relation to country-year context, macroeconomic structure, and cross-national policy variation.",
+      "A professional interface for analysing manifesto language in relation to country-year context, macroeconomic structure, and cross-national policy variation. If batch analysis is required, it can be achieved by python (via pip install gbert). Link: https://pypi.org/project/gbert/",
     meta_1_label: "Focus",
     meta_1_text: "Political text classification with structural context.",
     meta_2_label: "Inputs",
@@ -62,7 +62,7 @@ const translations = {
     hero_kicker: "研究インターフェース",
     hero_title: "比較政治研究のための多言語マニフェスト分析。",
     hero_copy:
-      "本インターフェースは、国・年コンテクスト、マクロ経済構造、国家間の政策差異との関係からマニフェスト文を分析します。",
+      "本インターフェースは、国・年コンテクスト、マクロ経済構造、国家間の政策差異との関係からマニフェスト文を分析します。大量分析が必要な場合は、pip install gbert を利用できます。リンク：https://pypi.org/project/gbert/",
     meta_1_label: "焦点",
     meta_1_text: "構造的文脈を考慮した政治テキスト分類。",
     meta_2_label: "入力",
@@ -89,7 +89,7 @@ const translations = {
     footer_label: "参加機関",
     contact_footer_html:
       '<p>李昕翮 講師 小樽商科大学 </p><p>メール：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>アクセス：〒047-8501 北海道小樽市緑3丁目5番21号　4号館　456号室</p>',
-    footer_meta: "本サイトは、Manifestoプロジェクト（Lehmann, Pola et al., Berlin: WZB Berlin Social Science Center / Göttingen: Institute for Democracy Research）に謝意を表します。<br>本ウェブサイトは、研究および教育目的のみに使用されています。",
+    footer_meta: "本サイトは、Manifestoプロジェクト（Lehmann, Pola et al., Berlin: WZB Berlin Social Science Center / Göttingen: Institute for Democracy Research (IfDem)）に謝意を表します。<br>本ウェブサイトは、研究および教育目的のみに使用されています。",
     api_saved: "バックエンド接続先を保存しました。",
     api_saved_error: "バックエンド接続先を入力してください。",
     api_checking: "バックエンド接続を確認しています...",
@@ -108,12 +108,12 @@ const translations = {
   },
   zh: {
     page_title: "比较宣言政策分析",
-    eyebrow: "比较政策人工智能",
+    eyebrow: "比较政策智能",
     brand_name: "宣言政策分析界面",
     hero_kicker: "研究界面",
-    hero_title: "比较政治的多语言政治宣言分析",
+    hero_title: "面向比较政治研究的多语言宣言分析。",
     hero_copy:
-      "一个专门网站，用于结合国家-年份情境、宏观经济结构和跨国政策差异来分析政治宣言文本。",
+      "一个专业界面，用于结合国家-年份情境、宏观经济结构和跨国政策差异来分析政治宣言文本。如果需要批量分析，可以通过 pip install gbert 使用。链接：https://pypi.org/project/gbert/",
     meta_1_label: "重点",
     meta_1_text: "结合结构背景的政治文本分类。",
     meta_2_label: "输入",
@@ -139,7 +139,7 @@ const translations = {
     macro_title: "来自 add/ 的宏观变量",
     footer_label: "参与机构",
     contact_footer_html:
-      '<p>李昕翮，终身讲师，小樽商科大学</p><p>邮箱：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>地址：日本北海道小樽市绿3丁目5-21，4号馆456室（Li Lab），047-8501</p>',
+      '<p>李昕翮，讲师，小樽商科大学</p><p>邮箱：<a href="mailto:lixinhe@res.otaru-uc.ac.jp">lixinhe@res.otaru-uc.ac.jp</a></p><p>地址：日本北海道小樽市绿3丁目5-21，4号馆456室（Li Lab），047-8501</p>',
     footer_meta:
       "感谢 Manifesto 项目。Lehmann, Pola et al., Berlin: WZB Berlin Social Science Center/Göttingen: Institute for Democracy Research (IfDem)。<br>本网站仅供学术与教学用途使用。",
     api_missing: "当前没有可用的后端接口。",
@@ -166,7 +166,7 @@ const translations = {
     hero_kicker: "Forschungsoberflaeche",
     hero_title: "Mehrsprachige Manifestanalyse fuer die vergleichende Politikwissenschaft.",
     hero_copy:
-      "Eine professionelle Oberflaeche zur Analyse von Manifesttexten im Zusammenhang mit Laender-Jahr-Kontexten, makrooekonomischen Strukturen und länderuebergreifender Politikvariation.",
+      "Eine professionelle Oberflaeche zur Analyse von Manifesttexten im Zusammenhang mit Laender-Jahr-Kontexten, makrooekonomischen Strukturen und länderuebergreifender Politikvariation. Fuer Batch-Analysen koennen Sie pip install gbert verwenden: https://pypi.org/project/gbert/",
     meta_1_label: "Fokus",
     meta_1_text: "Klassifikation politischer Texte mit strukturellem Kontext.",
     meta_2_label: "Eingaben",
@@ -219,7 +219,7 @@ const translations = {
     hero_kicker: "Interface de recherche",
     hero_title: "Analyse multilingue des manifestes pour la recherche politique comparee.",
     hero_copy:
-      "Une interface professionnelle pour analyser le langage des manifestes en lien avec le contexte pays-annee, la structure macroeconomique et la variation transnationale des politiques publiques.",
+      "Une interface professionnelle pour analyser le langage des manifestes en lien avec le contexte pays-annee, la structure macroeconomique et la variation transnationale des politiques publiques. Pour une analyse par lots, vous pouvez utiliser pip install gbert : https://pypi.org/project/gbert/",
     meta_1_label: "Focalisation",
     meta_1_text: "Classification de textes politiques avec contexte structurel.",
     meta_2_label: "Entrees",
@@ -272,7 +272,7 @@ const translations = {
     hero_kicker: "Interfaccia di ricerca",
     hero_title: "Analisi multilingue dei manifesti per la ricerca politica comparata.",
     hero_copy:
-      "Un'interfaccia professionale per analizzare il linguaggio dei manifesti in relazione al contesto paese-anno, alla struttura macroeconomica e alla variazione comparata delle politiche pubbliche.",
+      "Un'interfaccia professionale per analizzare il linguaggio dei manifesti in relazione al contesto paese-anno, alla struttura macroeconomica e alla variazione comparata delle politiche pubbliche. Per analisi in batch, puoi usare pip install gbert: https://pypi.org/project/gbert/",
     meta_1_label: "Focus",
     meta_1_text: "Classificazione del testo politico con contesto strutturale.",
     meta_2_label: "Input",
@@ -325,7 +325,7 @@ const translations = {
     hero_kicker: "Исследовательский интерфейс",
     hero_title: "Многоязычный анализ манифестов для сравнительных политических исследований.",
     hero_copy:
-      "Профессиональный интерфейс для анализа текста манифестов с учетом контекста страна-год, макроэкономической структуры и межстрановых различий в политике.",
+      "Профессиональный интерфейс для анализа текста манифестов с учетом контекста страна-год, макроэкономической структуры и межстрановых различий в политике. Для пакетного анализа можно использовать pip install gbert: https://pypi.org/project/gbert/",
     meta_1_label: "Фокус",
     meta_1_text: "Классификация политических текстов со структурным контекстом.",
     meta_2_label: "Входные данные",
@@ -378,7 +378,7 @@ const translations = {
     hero_kicker: "Interfaz de investigacion",
     hero_title: "Analisis multilingue de manifiestos para la investigacion politica comparada.",
     hero_copy:
-      "Una interfaz profesional para analizar el lenguaje de los manifiestos en relacion con el contexto pais-anio, la estructura macroeconomica y la variacion transnacional de las politicas publicas.",
+      "Una interfaz profesional para analizar el lenguaje de los manifiestos en relacion con el contexto pais-anio, la estructura macroeconomica y la variacion transnacional de las politicas publicas. Para analisis por lotes, puedes usar pip install gbert: https://pypi.org/project/gbert/",
     meta_1_label: "Enfoque",
     meta_1_text: "Clasificacion de texto politico con contexto estructural.",
     meta_2_label: "Entradas",
@@ -431,7 +431,7 @@ const translations = {
     hero_kicker: "Ερευνητικη διεπαφη",
     hero_title: "Πολυγλωσσικη αναλυση μανιφεστων για συγκριτικη πολιτικη ερευνα.",
     hero_copy:
-      "Μια επαγγελματικη διεπαφη για την αναλυση γλωσσας μανιφεστων σε σχεση με το πλαισιο χωρας-ετους, τη μακροοικονομικη δομη και τη διακρατικη διαφοροποιηση πολιτικων.",
+      "Μια επαγγελματικη διεπαφη για την αναλυση γλωσσας μανιφεστων σε σχεση με το πλαισιο χωρας-ετους, τη μακροοικονομικη δομη και τη διακρατικη διαφοροποιηση πολιτικων. Για μαζικη αναλυση, μπορειτε να χρησιμοποιησετε pip install gbert: https://pypi.org/project/gbert/",
     meta_1_label: "Εστιαση",
     meta_1_text: "Ταξινομηση πολιτικου κειμενου με δομικο πλαισιο.",
     meta_2_label: "Εισοδοι",
@@ -484,7 +484,7 @@ const translations = {
     hero_kicker: "연구 인터페이스",
     hero_title: "비교정치 연구를 위한 다국어 선언문 분석.",
     hero_copy:
-      "국가-연도 맥락, 거시경제 구조, 국가 간 정책 차이를 바탕으로 선언문 문장을 분석하는 전문 인터페이스입니다.",
+      "국가-연도 맥락, 거시경제 구조, 국가 간 정책 차이를 바탕으로 선언문 문장을 분석하는 전문 인터페이스입니다. 대량 분석이 필요하면 pip install gbert 를 사용할 수 있습니다. 링크: https://pypi.org/project/gbert/",
     meta_1_label: "초점",
     meta_1_text: "구조적 맥락을 반영한 정치 텍스트 분류.",
     meta_2_label: "입력",
